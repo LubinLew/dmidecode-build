@@ -18,7 +18,7 @@ jobs:
       - name: Build DmiDecode
         run: |
           ./build.sh
-          if [ -f "*.tar.gz" ] ; then
+          if [ -f "build/*.tar.gz" ] ; then
             git config --global user.name  "LubinLew"
             git config --global user.email "lgbxyz@gmail.com"
             git add version.txt
@@ -45,6 +45,6 @@ jobs:
         with:
           tag: ${{env.VERSION}}
           name: "dmidecode ${{env.VERSION}}"
-          artifacts: "*.tar.gz"
+          artifacts: "*.log,build/*.tar.gz"
           bodyFile: "release.md"
           token: ${{ secrets.GITHUB_TOKEN }}

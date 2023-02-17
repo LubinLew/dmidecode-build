@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 cd `dirname $0`
 ###############################################
 
@@ -20,9 +20,9 @@ rm -f  ${FILENAME}
 
 
 ## build linux(amd64)
-docker run --rm -v `pwd`:/src -w /src -h dmidecode alpine:latest /src/linux_amd64.sh 
+docker run --rm -v `pwd`/build:/src -w /src -h dmidecode alpine:latest /src/linux_amd64.sh 2>&1 | tee linux.log
 
 ## build windows(i686/x86_64)
-docker run --rm -v `pwd`:/src -w /src -h dmidecode ubuntu:latest /src/windows.sh
+docker run --rm -v `pwd`/build:/src -w /src -h dmidecode ubuntu:latest /src/windows.sh 2>&1 | tee windows.log
 
 

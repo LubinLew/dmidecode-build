@@ -37,12 +37,13 @@ function build() {
   popd
 }
 ##################################################################
-apt-get update  -y
-apt-get install -y mingw-w64 make
+apt-get update  -y > /dev/null
+apt-get install -y mingw-w64 make > /dev/null
 
 build i686
 build x64
 
 cd windows
-tar zcvf ../dmidecode-win32-i686.tar.gz    i686
-tar zcvf ../dmidecode-win32-x86_64.tar.gz  x64
+tar zcvf ../dmidecode_win32_i686.tar.gz    i686/*
+tar zcvf ../dmidecode_win32_x86_64.tar.gz  x64/*
+

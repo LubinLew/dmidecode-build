@@ -8,14 +8,14 @@ URL='http://download.savannah.gnu.org/releases/dmidecode/'
 FILENAME=$(curl -Lsk "${URL}" |grep -o 'dmidecode-.\+.tar.xz"' | sort -u | tail -n 1 | sed -e 's/"//' | tr -d '\n' | tr -d '\r')
 VERSION=$(echo "${FILENAME}"  | sed 's/.tar.xz//' | sed 's/dmidecode-//' | tr -d '\n' | tr -d '\r')
 LOCAL_VERSION=`cat version.txt`
-if [ "${VERSION}" == "${LOCAL_VERSION}" ] ; then
+if [ ${VERSION} == ${LOCAL_VERSION} ] ; then
   echo "Up to date"
   exit 0
 fi
 
 ## downlaod source
-curl -Lsko ${FILENAME} ${URL}/${FILENAME}
-tar xf ${FILENAME}
+curl -Lsko ${FILENAME} ${URL}${FILENAME}
+tar xf ${FILENAME} -C build
 rm -f  ${FILENAME}
 
 

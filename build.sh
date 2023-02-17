@@ -26,4 +26,4 @@ docker run --rm -v `pwd`/build:/src -w /src -h dmidecode alpine:latest /src/linu
 ## build windows(i686/x86_64)
 #docker run --rm -v `pwd`/build:/src -w /src -h dmidecode ubuntu:latest /src/windows.sh 2>&1 | tee windows.log
 
-
+echo "${VERSION}" > version.txt

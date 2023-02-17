@@ -18,7 +18,7 @@ jobs:
       - name: Build DmiDecode
         run: |
           ./build.sh
-          if [ -f "build/*.tar.gz" ] ; then
+          if [ -f "build/dmidecode_linux_amd64.tar.gz" ] ; then
             git config --global user.name  "LubinLew"
             git config --global user.email "lgbxyz@gmail.com"
             git add version.txt

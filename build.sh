@@ -22,7 +22,8 @@ rm -f  ${FILENAME}
 ## build linux(amd64)
 docker run --rm -v `pwd`/build:/src -w /src -h dmidecode alpine:latest /src/linux_amd64.sh 2>&1 | tee linux.log
 
+### NOT SUPPORT WINDOWS
 ## build windows(i686/x86_64)
-docker run --rm -v `pwd`/build:/src -w /src -h dmidecode ubuntu:latest /src/windows.sh 2>&1 | tee windows.log
+#docker run --rm -v `pwd`/build:/src -w /src -h dmidecode ubuntu:latest /src/windows.sh 2>&1 | tee windows.log
 
 

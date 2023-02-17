@@ -14,9 +14,9 @@ tar xf ${FILENAME}
 
 
 ## build linux(amd64)
-docker run --rm -v `pwd`:/src -w src -h dmidecode alpine:latest /src/linux_amd64.sh 
+docker run --rm -v `pwd`:/src -w /src -h dmidecode alpine:latest /src/linux_amd64.sh 
 
 ## build windows(i686)
-docker run --rm -v `pwd`:/src -w src -h dmidecode ubuntu:latest /src/win32_i686.sh
+docker run --rm -v `pwd`:/src -w /src -h dmidecode ubuntu:latest /src/win32_i686.sh
 
 

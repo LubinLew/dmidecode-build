@@ -30,7 +30,7 @@ function build() {
   pushd dmidecode-*
 
   make clean
-  make 
+  LDFLAGS="--static" make
   make strip
 
   cp *.exe ../windows/$1

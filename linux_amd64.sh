@@ -9,7 +9,7 @@ mkdir linux
 
 cd dmidecode-*
 make clean
-make 
+CC="clang" LDFLAGS="-static" make 
 make strip
 cp dmidecode biosdecode vpddecode ownership ../linux
 cd ..
